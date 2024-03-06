@@ -15,15 +15,7 @@ Developer: [💻@Fabrizio Borghesi](https://github.com/FabrizioBorghesi)
 
 Developer: [💻@Thiago Prado Marçal](https://github.com/ThiagoPradouni)
 
-#  🗺️Roadmap🗺️
 
-### ~~Criação do Site~~
-~~Definição da linguágem~~
-~~Definição das funções dos membros~~
-Matérias de cada bimestre
-Pesquisar sobre os principais sintomas;
-### Criação do Aplicativo
-~~Protótipo da interface~~
-~~Definição as utilidades do app~~
-Aprender a linguágem e se aprofundar com ela;
-Começar a utilizar a linguágem no aplicativo;
+# Documentação
+
+- [Telas](telas.md)
