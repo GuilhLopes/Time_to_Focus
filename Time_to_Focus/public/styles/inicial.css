@@ -1,16 +1,22 @@
 .estudo{
-    height: 180px;
-    width: 180px;
+    height: 300px;
+    width: 300px;
 }
 
 .seta{
-    height: 200px;
-    width: 200px;
+    height: 310px;
+    width: 310px;
 }
 
 div {
-    background-color: #FDFDFD;
+    background-color: #A28C74;
+    font-size:   1cm;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     align-items: center;
     text-align: center;
-    padding-top: 15%;
+    padding-top: 9%;
+}
+
+body{
+    background-color: #A28C74;
 }
