@@ -1,0 +1,16 @@
+.estudo{
+    height: 180px;
+    width: 180px;
+}
+
+.seta{
+    height: 200px;
+    width: 200px;
+}
+
+div {
+    background-color: #FDFDFD;
+    align-items: center;
+    text-align: center;
+    padding-top: 15%;
+}
