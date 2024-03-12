@@ -19,3 +19,35 @@ Developer: [💻@Thiago Prado Marçal](https://github.com/ThiagoPradouni)
 # Documentação
 
 - [Telas](telas.md)
+
+## Instalação
+
+Para utilizar esse repositório precisamos clonar ele no seu computador com 
+
+```
+git clone https://github.com/GuilhLopes/Time_to_Focus.git
+```
+
+após isso devemos verificar se temos o *node.js* instalado no computador, utilizamos o comando 
+
+```
+node -v
+```
+
+caso precise instalar o node utilize esse link: https://nodejs.org/en
+
+### instalando dependencias
+
+para instalar as depencias utilizamos o comando:
+
+```
+npm install
+```
+
+após a instalação devemos ter um diretório *node_modules* no nossos arquivos.
+
+Para rodarmos o site no local host usaremos o comando, temos que nos certificar que estamos na pasta *src*:
+
+```
+node index.js
+```
