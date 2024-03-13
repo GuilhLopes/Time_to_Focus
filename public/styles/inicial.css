@@ -1,0 +1,32 @@
+.estudo{
+    height: 300px;
+    width: 300px;
+    border-color: black;
+    border: 0.01px solid black;
+    border-radius: 20px;
+}
+
+.estudo:hover{
+    transform: scale(1.1);
+}
+.seta{
+    height: 310px;
+    width: 310px;
+}
+
+a{
+    color: #A28C74;
+}
+
+div {
+    background-color: #A28C74;
+    font-size:   1cm;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    align-items: center;
+    text-align: center;
+    padding-top: 8%;
+}
+
+body{
+    background-color: #A28C74;
+}
