@@ -19,6 +19,10 @@ app.get('/', function(req,res){
     res.render('inicial');
 });
 
+app.get('/pomodoro', function(req,res){
+    res.render('pomodoro');
+});
+
 app.listen(port, ()=>{
     console.log('Site está rodando na porta 3000!');
 });
