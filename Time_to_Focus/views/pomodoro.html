@@ -17,8 +17,45 @@
         </nav>
     </header>
     <div class="pagina">
-        <h2>Cronometro</h2>
-        <h2>20:00</h2>
+        <h2>Timer</h2>
+        <h2 class="tempo" id="tempo">20:00</h2>
     </div>
+
+    <script type="text/javascript">
+
+        var min = 20;
+        var seg = 0;
+
+        function diminuirTempo(){
+
+            if(this.seg != 0){
+                this.seg -= 1;
+            }
+
+            if((min == 0) && (seg == 0)){
+                clearInterval(ponteiro);
+            }else{
+                if(seg == 0){
+                    this.min -= 1;
+                    this.seg = 59;
+                }
+            }
+
+            if(seg >=10){
+                document.getElementById("tempo").innerHTML = min.toString() + ':' + seg.toString();
+                if(min == 0){
+                    document.getElementById("tempo").innerHTML = '0' + min.toString() + ':' + seg.toString();
+                }
+            }else if (seg < 10){
+                document.getElementById("tempo").innerHTML = min.toString() + ':0' + seg.toString();
+                if(min == 0){
+                    document.getElementById("tempo").innerHTML = '0' + min.toString() + ':0' + seg.toString();
+                }
+            }
+        }
+
+        const ponteiro = setInterval(diminuirTempo, 1000);
+
+    </script>
 </body>
 </html>
