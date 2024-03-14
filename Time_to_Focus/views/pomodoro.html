@@ -9,30 +9,56 @@
 </head>
 <body>
     <header class="cabecalho">
-        <p></p>
-        <p>Pomodoro</p>
+        <p class="pomodoro">Pomodoro</p>
         <nav>
-            <p>Teste</p>
-            <p>Teste</p>
+            <a href="/">Inicio</a>
+            <a>Outro estudo</a>
         </nav>
     </header>
     <div class="pagina">
-        <h2>Timer</h2>
-        <h2 class="tempo" id="tempo">20:00</h2>
+        <div class="timer" id="timer">
+            <h2>Timer</h2>
+            <h2 class="tempo" id="tempo">20:00</h2>
+            <button onclick="Estudo()" id="botao"></button>
+        </div>
     </div>
 
     <script type="text/javascript">
-
-        var min = 20;
+        document.getElementById('botao').innerHTML = "Começar o Estudo";
+        var min = 0;
         var seg = 0;
+        var pas = 0; 
+
+        function Descanso(){
+            min = 5;
+            seg = 0;
+            pas = 1;
+            const ponteiro = setInterval(diminuirTempo, 1000);
+        }
+
+        function Estudo(){
+            min = 20;
+            seg = 0;
+            pas = 0;
+            const ponteiro = setInterval(diminuirTempo, 1000);
+        }
 
         function diminuirTempo(){
-
+            document.getElementById('botao').style.display = 'none';
             if(this.seg != 0){
                 this.seg -= 1;
             }
 
             if((min == 0) && (seg == 0)){
+                document.getElementById('botao').style.display = 'inline-block';
+                if(pas == 0){
+                    document.getElementById('botao').innerHTML = "Começar o Descanso";
+                    document.getElementById('botao').setAttribute('onclick', 'Descanso()');
+                }else{
+                    document.getElementById('botao').innerHTML = "Começar o Estudo";
+                    document.getElementById('botao').setAttribute('onclick', 'Estudo()');
+                }
+                document.getElementById("tempo").innerHTML = '0' + min.toString() + ':0' + seg.toString();
                 clearInterval(ponteiro);
             }else{
                 if(seg == 0){
@@ -53,8 +79,6 @@
                 }
             }
         }
-
-        const ponteiro = setInterval(diminuirTempo, 1000);
 
     </script>
 </body>

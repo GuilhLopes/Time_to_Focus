@@ -27,11 +27,32 @@
 
 body{
     background-color: #A28C74;
+    margin: 0;
 }
 
 nav{
     display: flex;
     justify-content: space-between;
+    width: 200px;
 }
 
+a{
+    color: black;
+    text-decoration: none;
+}
 
+.timer{
+    background-color: #e3be97;
+    width: 400px;
+    border-radius: 20px;
+    display: inline-flex;
+    padding: 10px;
+    align-items: center;
+    flex-direction: column;
+}
+
+button{
+    height: 50px;
+    background-color: #c7b19b;
+    border-radius: 20px;
+}
