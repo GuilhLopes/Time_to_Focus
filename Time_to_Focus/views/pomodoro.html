@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time to Focus</title>
-    <link rel="stylesheet" href="styles/pomodoro.css">
+    <link rel="stylesheet" href="pomodoro.css">
     <script src="https://kit.fontawesome.com/70a34d8a06.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
     <div class="pagina">
         <div class="timer" id="timer">
             <h2>Timer</h2>
-            <h2 class="tempo" id="tempo">20:00</h2>
+            <h2 class="tempo" id="tempo">25:00</h2>
             <button onclick="Estudo()" id="botao"></button>
         </div>
     </div>
@@ -28,30 +28,45 @@
         var min = 0;
         var seg = 0;
         var pas = 0; 
+        var conta = 0;
+        var ponteiro;
 
         function Descanso(){
             min = 5;
             seg = 0;
             pas = 1;
-            const ponteiro = setInterval(diminuirTempo, 1000);
+            ponteiro = setInterval(diminuirTempo, 1000);
+        }
+
+        function DescansoLongo(){
+            min = 15;
+            seg = 0;
+            pas = 1;
+            ponteiro = setInterval(diminuirTempo, 1000);
         }
 
         function Estudo(){
-            min = 20;
+            min = 25;
             seg = 0;
             pas = 0;
-            const ponteiro = setInterval(diminuirTempo, 1000);
+            conta += 1;
+            ponteiro = setInterval(diminuirTempo, 1000);
         }
 
         function diminuirTempo(){
             document.getElementById('botao').style.display = 'none';
+
             if(this.seg != 0){
                 this.seg -= 1;
             }
 
             if((min == 0) && (seg == 0)){
                 document.getElementById('botao').style.display = 'inline-block';
-                if(pas == 0){
+                if((pas == 0) && (conta == 4)){
+                    document.getElementById('botao').innerHTML = "Começar o Descanso Longo";
+                    document.getElementById('botao').setAttribute('onclick', 'DescansoLongo()');
+                    conta = 0;
+                }else if(pas == 0){
                     document.getElementById('botao').innerHTML = "Começar o Descanso";
                     document.getElementById('botao').setAttribute('onclick', 'Descanso()');
                 }else{
@@ -79,7 +94,6 @@
                 }
             }
         }
-
     </script>
 </body>
 </html>
