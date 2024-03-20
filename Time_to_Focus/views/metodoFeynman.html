@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Caderno</title>
+    <link rel="stylesheet" href="..\public\styles\feynman.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Poppins:wght@600&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <p class="robinson">Método Feynman</p>
+        <nav>
+            <a href="inicial.html">Inicio</a>
+            <a>Outro estudo</a>
+        </nav>
+    </header>
+    <div class="centralizado">
+        <button id="salvarPDF">Salvar estudo</button>
+    </div>
+    <div class="caderno" contenteditable="true" spellcheck="false">
+        <h1>Nome do Conteúdo</h1><p>A abordagem Feynman representa um modelo de aprendizado estruturado, formado por etapas que proporcionam uma compreensão profunda do conteúdo.<br>Aqui está estruturado todo o modelo para empregar essa técnica em sua jornada de estudo.</p>
+        <h2>Segue abaixo os tópicos:</h2>
+        <ul><li class="etapas">Escolha um conceito <p>Para começar com a Técnica Feynman, escolha um conceito que deseja entender, como a relatividade ou o Teorema de Pitágoras. Estude o tema em profundidade usando livros, recursos online ou palestras. Não é necessário dominá-lo completamente nesta etapa, apenas reúna informações suficientes para ter um entendimento básico.</p></li>
+            <li class="etapas">Criança imaginária <p>Na segunda etapa, o foco é articular o que você aprendeu. Explicar o tópico escolhido como se estivesse ensinando a uma criança é a ideia. Este exercício ajuda a desmembrar ideias complexas em partes mais simples e fáceis de entender. Evite linguagem complicada, use palavras simples que uma criança de 12 anos entenderia.</p></li>
+            <li class="etapas">Identifique as lacunas e volte ao material de origem <p>Enquanto tenta explicar o conceito de forma simples, você reconhecerá rapidamente o que compreende bem e onde estão suas dificuldades. Quando encontrar lacunas, retorne ao material original, revise e pesquise até sentir-se mais confiante. Tente ensinar o conceito novamente. Logo saberá o que estudar mais e onde focar seus esforços na próxima vez.</p></li>
+            <li class="etapas">Reveja e simplifique<p>Agora, você já compreende o assunto o suficiente para explicá-lo de forma simples. No entanto, ainda é possível simplificar ainda mais sua explicação, usando comparações com algo familiar que tornem o conceito mais acessível. Essa fase solidifica sua compreensão e permite uma conexão mais profunda com o conteúdo.</p></li>
+        </ul>
+    </div>
+
+
+    <script type="text/javascript">
+        document.getElementById("salvarPDF").addEventListener("click", function() {
+            const elementoParaSalvar = document.body;
+          
+            const opcoes = {
+                margin: 0,
+                filename: 'minha_pagina.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+          
+            html2pdf()
+                .from(elementoParaSalvar)
+                .set(opcoes)
+                .save();
+        });
+        
+    </script>
+</body>
+</html>

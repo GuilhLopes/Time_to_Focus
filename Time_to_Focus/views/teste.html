@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salvar Página como PDF</title>
+<!-- Adicionando a biblioteca html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<button id="salvarPDF">Salvar Página como PDF</button>
+
+<script type="text/javascript">
+    document.getElementById("salvarPDF").addEventListener("click", function() {
+        // Selecionando o elemento que queremos salvar como PDF (neste caso, toda a página)
+        const elementoParaSalvar = document.body;
+      
+        const opcoes = {
+            margin: 0,
+            filename: 'minha_pagina.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+      
+        html2pdf()
+            .from(elementoParaSalvar)
+            .set(opcoes)
+            .save();
+    });
+    
+</script>
+</body>
+</html>
