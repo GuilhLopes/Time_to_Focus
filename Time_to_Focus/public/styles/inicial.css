@@ -1,13 +1,15 @@
 .estudo{
     height: 300px;
     width: 300px;
-    border-color: black;
+    /*border-color: black;
     border: 0.01px solid black;
-    border-radius: 20px;
+    border-radius: 20px;*/
+    transition: width 0.5s ease, height 0.5s ease;
 }
 
 .estudo:hover{
-    transform: scale(1.1);
+    width: 330px;
+    height: 330px;
 }
 .seta{
     height: 310px;
@@ -15,11 +17,11 @@
 }
 
 a{
-    color: #A28C74;
+    color: #FFFDD0;
 }
 
 div {
-    background-color: #A28C74;
+    background-color: #FFFDD0;
     font-size:   1cm;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     align-items: center;
@@ -28,5 +30,12 @@ div {
 }
 
 body{
-    background-color: #A28C74;
+    background-color: #FFFDD0;
+}
+
+h2, p{
+  font-family: "Patrick Hand SC", cursive;
+  font-weight: 800;
+  font-style: normal;
+  color: #3C3A5D;
 }

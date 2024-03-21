@@ -23,6 +23,9 @@ app.get('/pomodoro', function(req,res){
     res.render('pomodoro');
 });
 
+app.get('/feynman', function(req,res){
+    res.render('metodoFeynman');
+});
 app.listen(port, ()=>{
     console.log('Site está rodando na porta 3000!');
 });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time to Focus</title>
-    <link rel="stylesheet" href="styles/pomodoro.css">
+    <link rel="stylesheet" href="styles\pomodoro.css">
     <script src="https://kit.fontawesome.com/70a34d8a06.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <p class="pomodoro">Pomodoro</p>
         <nav>
             <a href="/">Inicio</a>
-            <a>Outro estudo</a>
+            <a href="/feynman" target="_blank">feynman</a>
         </nav>
     </header>
     <div class="pagina">
@@ -23,6 +23,11 @@
         </div>
     </div>
 
+    <audio id="audio" >
+        <source src="assets/alarm_clock.mp3" type="audio/mp3" >
+        Seu navegador não possui suporte ao elemento audio
+    </audio>
+
     <script type="text/javascript">
         document.getElementById('botao').innerHTML = "Começar o Estudo";
         var min = 0;
@@ -32,6 +37,7 @@
         var ponteiro;
 
         function Descanso(){
+            document.getElementById('audio').pause();
             min = 5;
             seg = 0;
             pas = 1;
@@ -39,6 +45,7 @@
         }
 
         function DescansoLongo(){
+            document.getElementById('audio').pause();
             min = 15;
             seg = 0;
             pas = 1;
@@ -46,6 +53,7 @@
         }
 
         function Estudo(){
+            document.getElementById('audio').pause();
             min = 25;
             seg = 0;
             pas = 0;
@@ -62,6 +70,7 @@
 
             if((min == 0) && (seg == 0)){
                 document.getElementById('botao').style.display = 'inline-block';
+                document.getElementById('audio').play();
                 if((pas == 0) && (conta == 4)){
                     document.getElementById('botao').innerHTML = "Começar o Descanso Longo";
                     document.getElementById('botao').setAttribute('onclick', 'DescansoLongo()');
@@ -78,7 +87,7 @@
             }else{
                 if(seg == 0){
                     this.min -= 1;
-                    this.seg = 59;
+                    this.seg = 1;
                 }
             }
 
