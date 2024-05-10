@@ -5,8 +5,11 @@
     margin: 0px;
     padding: 10px 20px;
     justify-content: space-between;
+    font-family: "Patrick Hand SC", cursive;
     align-items: center;
     background-color: #e3be97;
+
+    color: #3C3A5D;
 }
 
 .menu{
@@ -55,4 +58,18 @@ button{
     height: 50px;
     background-color: #c7b19b;
     border-radius: 20px;
+}
+
+.contador{
+    background-color: white;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    width: 100px;
+    border-radius: 20px;
+    border: 0.01px solid black;
+}
+
+.contador p{
+    margin: 0px;
 }

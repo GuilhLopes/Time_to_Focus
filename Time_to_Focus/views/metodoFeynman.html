@@ -12,6 +12,10 @@
 </head>
 <body>
     <header class="cabecalho">
+        <div class="contador">
+            <p>Visitas</p>
+            <p id="visitas"></p>
+        </div>
         <p class="robinson">Método Feynman</p>
         <nav>
             <a href="/">Inicio</a>
@@ -21,7 +25,7 @@
     <div class="centralizado">
         <button id="salvarPDF">Salvar estudo</button>
     </div>
-    <div class="caderno" contenteditable="true" spellcheck="false">
+    <div class="caderno" contenteditable="true" id="caderno" spellcheck="false">
         <h1>Nome do Conteúdo</h1><p>A abordagem Feynman representa um modelo de aprendizado estruturado, formado por etapas que proporcionam uma compreensão profunda do conteúdo.<br>Aqui está estruturado todo o modelo para empregar essa técnica em sua jornada de estudo.</p>
         <h2>Segue abaixo os tópicos:</h2>
         <ul><li class="etapas">Escolha um conceito <p>Para começar com a Técnica Feynman, escolha um conceito que deseja entender, como a relatividade ou o Teorema de Pitágoras. Estude o tema em profundidade usando livros, recursos online ou palestras. Não é necessário dominá-lo completamente nesta etapa, apenas reúna informações suficientes para ter um entendimento básico.</p></li>
@@ -31,10 +35,10 @@
         </ul>
     </div>
 
-
+    <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
         document.getElementById("salvarPDF").addEventListener("click", function() {
-            const elementoParaSalvar = document.body;
+            const elementoParaSalvar = document.getElementById('caderno');
           
             const opcoes = {
                 margin: 0,
@@ -48,6 +52,11 @@
                 .from(elementoParaSalvar)
                 .set(opcoes)
                 .save();
+        });
+
+        var socket = io('http://localhost:3000');
+        socket.on('visita', function(visitas){
+            document.getElementById('visitas').innerHTML = visitas;
         });
         
     </script>

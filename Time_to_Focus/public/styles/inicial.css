@@ -26,7 +26,6 @@ div {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     align-items: center;
     text-align: center;
-    padding-top: 9%;
 }
 
 body{
@@ -38,4 +37,18 @@ h2, p{
   font-weight: 800;
   font-style: normal;
   color: #3C3A5D;
+}
+
+.contador{
+    background-color: white;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    width: 100px;
+    border-radius: 20px;
+    border: 0.01px solid black;
+}
+
+.contador p{
+    margin: 0px;
 }
