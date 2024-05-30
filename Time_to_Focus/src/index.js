@@ -8,8 +8,9 @@ const io = new Server(server);
 
 const sessao = session({
     secret: '2C44-4D44-WppQ38S',
-    resave: true,
-    saveUninitialized: true
+    resave: false, // Alterado para false para evitar salvamento desnecessário da sessão
+    saveUninitialized: false, // Alterado para false para evitar criação de sessões não modificadas
+    cookie: { maxAge: 24 * 60 * 60 * 1000 } // Definindo tempo de expiração da sessão, por exemplo, 1 minuto
 });
 
 const port = 3000;
@@ -36,6 +37,8 @@ app.use((req, res, next) => {
         totalVisitas++;
         req.session.visitas = totalVisitas;
         io.emit('visita', totalVisitas);
+    } else if (req.session.visitouPaginaInicial) {
+        req.session.visitas = totalVisitas; // Atualizar a sessão com o total de visitas
     }
     next();
 });
